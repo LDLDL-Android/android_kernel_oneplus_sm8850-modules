@@ -219,6 +219,8 @@
 
 #define WLS_CURR_WAIT_FAST_MA		300
 #define WLS_CURR_STOP_CHG_MA		300
+/* MMI stop: a 300 mA ICL still trickle-charges the battery on EPP pads */
+#define WLS_CURR_MMI_STOP_MA		0
 #define WLS_CURR_JEITA_CHG_MA		300
 #define WLS_FASTCHG_CURR_50W_MAX_MA	2500
 #define WLS_FASTCHG_CURR_45W_MAX_MA	2250

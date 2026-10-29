@@ -8747,7 +8747,7 @@ static int oplus_chg_wls_rx_handle_state_bpp(struct oplus_chg_wls *wls_dev)
 		}
 	} else {
 		if (!get_client_vote(wls_dev->nor_out_disable_votable, STOP_VOTER)) {
-			vote(wls_dev->nor_icl_votable, STOP_VOTER, true, WLS_CURR_STOP_CHG_MA, true);
+			vote(wls_dev->nor_icl_votable, STOP_VOTER, true, WLS_CURR_MMI_STOP_MA, true);
 			vote(wls_dev->nor_out_disable_votable, STOP_VOTER, true, 0, false);
 		}
 	}
@@ -9137,7 +9137,7 @@ static int oplus_chg_wls_rx_handle_state_epp(struct oplus_chg_wls *wls_dev)
 		}
 	} else {
 		if (!get_client_vote(wls_dev->nor_out_disable_votable, STOP_VOTER)) {
-			vote(wls_dev->nor_icl_votable, STOP_VOTER, true, WLS_CURR_STOP_CHG_MA, true);
+			vote(wls_dev->nor_icl_votable, STOP_VOTER, true, WLS_CURR_MMI_STOP_MA, true);
 			vote(wls_dev->nor_out_disable_votable, STOP_VOTER, true, 0, false);
 		}
 	}
@@ -9338,7 +9338,7 @@ static int oplus_chg_wls_rx_handle_state_epp_plus(struct oplus_chg_wls *wls_dev)
 		}
 	} else {
 		if (!get_client_vote(wls_dev->nor_out_disable_votable, STOP_VOTER)) {
-			vote(wls_dev->nor_icl_votable, STOP_VOTER, true, WLS_CURR_STOP_CHG_MA, true);
+			vote(wls_dev->nor_icl_votable, STOP_VOTER, true, WLS_CURR_MMI_STOP_MA, true);
 			vote(wls_dev->nor_out_disable_votable, STOP_VOTER, true, 0, false);
 		}
 	}
@@ -9974,7 +9974,7 @@ static int oplus_chg_wls_rx_handle_state_ffc(struct oplus_chg_wls *wls_dev)
 		}
 	} else {
 		if (!get_client_vote(wls_dev->nor_out_disable_votable, STOP_VOTER)) {
-			vote(wls_dev->nor_icl_votable, STOP_VOTER, true, WLS_CURR_STOP_CHG_MA, true);
+			vote(wls_dev->nor_icl_votable, STOP_VOTER, true, WLS_CURR_MMI_STOP_MA, true);
 			vote(wls_dev->nor_out_disable_votable, STOP_VOTER, true, 0, false);
 		}
 	}
@@ -10164,7 +10164,7 @@ static int oplus_chg_wls_rx_handle_state_done(struct oplus_chg_wls *wls_dev)
 		}
 	} else {
 		if (!get_client_vote(wls_dev->nor_out_disable_votable, STOP_VOTER)) {
-			vote(wls_dev->nor_icl_votable, STOP_VOTER, true, WLS_CURR_STOP_CHG_MA, true);
+			vote(wls_dev->nor_icl_votable, STOP_VOTER, true, WLS_CURR_MMI_STOP_MA, true);
 			vote(wls_dev->nor_out_disable_votable, STOP_VOTER, true, 0, false);
 		}
 	}
@@ -10312,7 +10312,7 @@ static int oplus_chg_wls_rx_handle_state_quiet(struct oplus_chg_wls *wls_dev)
 		}
 	} else {
 		if (!get_client_vote(wls_dev->nor_out_disable_votable, STOP_VOTER)) {
-			vote(wls_dev->nor_icl_votable, STOP_VOTER, true, WLS_CURR_STOP_CHG_MA, true);
+			vote(wls_dev->nor_icl_votable, STOP_VOTER, true, WLS_CURR_MMI_STOP_MA, true);
 			vote(wls_dev->nor_out_disable_votable, STOP_VOTER, true, 0, false);
 		}
 	}
@@ -10405,7 +10405,7 @@ static int oplus_chg_wls_rx_enter_state_stop(struct oplus_chg_wls *wls_dev)
 		}
 
 		(void)oplus_chg_wls_rx_set_vout(wls_dev->wls_rx, dynamic_cfg->fastchg_init_vout_mv, -1);
-		vote(wls_dev->nor_icl_votable, STOP_VOTER, true, 300, true);
+		vote(wls_dev->nor_icl_votable, STOP_VOTER, true, WLS_CURR_MMI_STOP_MA, true);
 		vote(wls_dev->nor_out_disable_votable, STOP_VOTER, true, 1, false);
 		wls_status->current_rx_state = OPLUS_CHG_WLS_RX_STATE_STOP;
 		wls_status->state_sub_step = 0;
